@@ -24,6 +24,11 @@
   margin-bottom: 20px;
 }
 
+/* Hover effect */
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
 /* Profile Name & Title */
 .profile-name {
   font-size: 28px;
