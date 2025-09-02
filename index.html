@@ -4,167 +4,224 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anagha Sreenidhi Dhavala | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Library for Scroll Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
-  :root{
-    --bg:#0e0f13; --panel:#151821; --text:#e8ebf1; --muted:#a5acc1; --brand:#6aa9ff; --brand-2:#7d5cff; --brand-3:#382977;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,\"Helvetica Neue\",Arial,sans-serif;color:var(--text);background:linear-gradient(180deg,#0c0d12,#11131b 30%,#0e0f13)}
-  header{position:sticky;top:0;z-index:50;background:rgba(14,15,19,.4);backdrop-filter:blur(8px);border-bottom:1px solid #1f2230}
-  nav{max-width:1100px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
-  .logo{margin:0;font-weight:800;letter-spacing:.5px}
-  .logo span{color:var(--brand)}
-  .nav-links{list-style:none;display:flex;gap:18px;margin:0;padding:0}
-  .nav-links a{color:var(--muted);text-decoration:none;font-weight:600}
-  .nav-links a:hover{color:var(--text)}
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-  .home{min-height:78vh;display:grid;place-items:center;padding:60px 18px;background:radial-gradient(800px 400px at 70% 20%,rgba(125,92,255,.15),transparent 60%),radial-gradient(600px 300px at 20% 80%,rgba(106,169,255,.12),transparent 60%)}
-  .home-content{text-align:center}
-  .home h2{font-size:clamp(28px,5vw,44px);margin:0 0 8px}
-  .home h2 span{color:var(--brand)}
-  .home p{margin:0 0 22px;color:var(--muted)}
-  .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b0c10;text-decoration:none;font-weight:800}
+    body {
+      background-color: #f9f9f9;
+      color: #222;
+      text-align: center;
+      line-height: 1.6;
+    }
 
-  .about,.projects,.resume,.contact{max-width:1100px;margin:0 auto;padding:60px 18px}
-  .about-content{display:grid;grid-template-columns:160px 1fr;gap:22px;align-items:start;background:var(--panel);border:1px solid #1f2230;border-radius:16px;padding:22px}
-  .about-content img{width:160px;height:160px;object-fit:cover;border-radius:14px;border:1px solid #1f2230}
-  .skills{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:10px 0 0;list-style:none}
-  .skills li{padding:8px 12px;border:1px solid #2a2e41;border-radius:999px;color:var(--muted)}
+    header {
+      padding: 40px 20px;
+    }
 
-  .projects h2,.resume h2,.contact h2,.about h2{margin-top:0}
-  .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-  .project-card{background:var(--panel);border:1px solid #1f2230;border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-  .project-card img{width:100%;height:160px;object-fit:cover;border-bottom:1px solid #1f2230}
-  .project-card h3{margin:14px 14px 6px}
-  .project-card p{margin:0 14px 16px;color:var(--muted)}
-  .project-card .btn{margin:0 14px 16px;align-self:flex-start}
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
 
-  .resume{background:linear-gradient(180deg,rgba(125,92,255,.07),transparent)}
+    .typing {
+      font-size: 1.2rem;
+      color: #555;
+      margin-top: 10px;
+      height: 25px;
+    }
 
-  .contact form{display:grid;gap:12px;max-width:520px}
-  input,textarea{padding:12px 14px;border-radius:12px;border:1px solid #2a2e41;background:#0f121a;color:var(--text)}
-  textarea{min-height:120px;resize:vertical}
-  .social-links{margin-top:18px;display:flex;gap:14px;flex-wrap:wrap}
-  .social-links a{color:var(--brand)}
+    /* Profile Picture Animation */
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      animation: floatUpDown 3s ease-in-out infinite;
+      transition: transform 0.3s ease;
+      display: block;
+      margin: 20px auto;
+    }
 
-  footer{padding:30px 18px;color:var(--muted);text-align:center;border-top:1px solid #1f2230}
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
 
-  @media (max-width:640px){
-    .about-content{grid-template-columns:1fr}
-    .about-content img{width:100%;height:220px}
-  }
-</style>
-  <link rel="stylesheet" href="style.css">
+    @keyframes floatUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    /* Buttons Animation */
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      margin: 15px;
+      background: #6c63ff;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background-color: #5848d7;
+      transform: scale(1.05);
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Ripple Effect */
+    .btn::after {
+      content: "";
+      position: absolute;
+      width: 300%;
+      height: 300%;
+      top: 50%;
+      left: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.5s ease-out;
+    }
+
+    .btn:active::after {
+      transform: translate(-50%, -50%) scale(1);
+      transition: 0s;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    p {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .profile-pic {
+        width: 150px;
+        height: 150px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <h1 class="logo">Anagha</span>.</span></h1>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+
+  <header data-aos="fade-down">
+    <img src="images/profile.jpg" alt="Anagha Sreenidhi Dhavala" class="profile-pic" />
+    <h1>Anagha Sreenidhi Dhavala</h1>
+    <div class="typing" id="typing"></div>
+    <button class="btn">Download Resume</button>
+    <button class="btn">Contact Me</button>
   </header>
 
-  <!-- Home Section -->
-  <section id="home" class="home">
-    <div class="home-content">
-      <h2>Hi, I'm <span>Anagha<span> Sreenidhi</span></h2>
-      <p>Aspiring Software Developer | UPSC Aspirant | Tech Enthusiast</p>
-      <a href="#projects" class="btn">View My Work</a>
-    </div>
+  <section data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate developer and aspiring software engineer, building projects and learning new technologies to make an impact.
+    </p>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="about-content">
-      <img src="/assets/profile.jpg" alt="Anagha" class="profile-pic" >
-      <div>
-        <h2>About Me</h2>
-        <p>
-          I'm Anagha Sreenidhi Dhavala, a passionate learner exploring
-          technology and problem-solving. I aim to build impactful projects
-          and continuously upskill myself.
-        </p>
-        <h3>Skills</h3>
-        <ul class="skills">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>SQL</li>
-          <li>JavaScript</li>
-          <li>Git & GitHub</li>
-          <li>Java</li>
-          <li>C Programming</li>
-        </ul>
-      </div>
-    </div>
+  <section data-aos="zoom-in">
+    <h2>Projects</h2>
+    <p>
+      Check out my GitHub for some of my best work, including responsive websites, apps, and interactive designs.
+    </p>
+    <button class="btn">View Projects</button>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h2>My Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="assets/project1.png" alt="Project 1" />
-        <h3>Project One</h3>
-        <p>Brief description of the project goes here.</p>
-        <a href="#" target="_blank" class="btn">View Project</a>
-      </div>
-      <div class="project-card">
-        <img src="assets/project2.png" alt="Project 2" />
-        <h3>Project Two</h3>
-        <p>Brief description of the project goes here.</p>
-        <a href="#" target="_blank" class="btn">View Project</a>
-      </div>
-    </div>
+  <section data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Email: anaghasreenidhidhavala@gmail.com</p>
+    <p>LinkedIn: linkedin.com/in/anaghasreenidhidhavala</p>
   </section>
 
-  <!-- Resume Section -->
-  <section id="resume" class="resume">
-    <h2>Resume</h2>
-    <p>Download my latest resume below:</p>
-    <a href="assets/resume.pdf" download class="btn">Download Resume</a>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-    <div class="social-links">
-      <a href="https://linkedin.com/in/anaghasreenidhidhavala" target="_blank">LinkedIn</a>
-      <a href="https://github.com/anaghasreenidhi" target="_blank">GitHub</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Anagha Sreenidhi Dhavala. All Rights Reserved.</p>
-  </footer>
-
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-  // Smooth scroll is handled by CSS (scroll-behavior). Add a tiny polish:
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{
-      const id=a.getAttribute('href');
-      if(id.length>1){
-        e.preventDefault();
-        document.querySelector(id)?.scrollIntoView({behavior:'smooth'});
-      }
+    AOS.init({
+      duration: 1000,
+      once: true
     });
-  });
-</script>
+  </script>
+
+  <!-- Typing Effect -->
+  <script>
+    const texts = [
+      "Aspiring Software Engineer",
+      "Web Developer",
+      "Creative Designer",
+      "Tech Enthusiast"
+    ];
+
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+
+    (function type() {
+      if (count === texts.length) {
+        count = 0;
+      }
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+
+      document.getElementById('typing').textContent = letter;
+
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 1000);
+      } else {
+        setTimeout(type, 150);
+      }
+    })();
+  </script>
 </body>
 </html>
-
-
-
