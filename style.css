@@ -1,0 +1,14 @@
+/* Profile picture styling */
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+}
+
+/* Hover effect */
+.profile-pic:hover {
+    transform: scale(1.05);
+}
