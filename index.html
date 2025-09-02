@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anagha Sreenidhi Dhavala | Portfolio</title>
+  <style>
+  :root{
+    --bg:#0e0f13; --panel:#151821; --text:#e8ebf1; --muted:#a5acc1; --brand:#6aa9ff; --brand-2:#7d5cff; --brand-3:#382977;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,\"Helvetica Neue\",Arial,sans-serif;color:var(--text);background:linear-gradient(180deg,#0c0d12,#11131b 30%,#0e0f13)}
+  header{position:sticky;top:0;z-index:50;background:rgba(14,15,19,.4);backdrop-filter:blur(8px);border-bottom:1px solid #1f2230}
+  nav{max-width:1100px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+  .logo{margin:0;font-weight:800;letter-spacing:.5px}
+  .logo span{color:var(--brand)}
+  .nav-links{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+  .nav-links a{color:var(--muted);text-decoration:none;font-weight:600}
+  .nav-links a:hover{color:var(--text)}
+
+  .home{min-height:78vh;display:grid;place-items:center;padding:60px 18px;background:radial-gradient(800px 400px at 70% 20%,rgba(125,92,255,.15),transparent 60%),radial-gradient(600px 300px at 20% 80%,rgba(106,169,255,.12),transparent 60%)}
+  .home-content{text-align:center}
+  .home h2{font-size:clamp(28px,5vw,44px);margin:0 0 8px}
+  .home h2 span{color:var(--brand)}
+  .home p{margin:0 0 22px;color:var(--muted)}
+  .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b0c10;text-decoration:none;font-weight:800}
+
+  .about,.projects,.resume,.contact{max-width:1100px;margin:0 auto;padding:60px 18px}
+  .about-content{display:grid;grid-template-columns:160px 1fr;gap:22px;align-items:start;background:var(--panel);border:1px solid #1f2230;border-radius:16px;padding:22px}
+  .about-content img{width:160px;height:160px;object-fit:cover;border-radius:14px;border:1px solid #1f2230}
+  .skills{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:10px 0 0;list-style:none}
+  .skills li{padding:8px 12px;border:1px solid #2a2e41;border-radius:999px;color:var(--muted)}
+
+  .projects h2,.resume h2,.contact h2,.about h2{margin-top:0}
+  .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .project-card{background:var(--panel);border:1px solid #1f2230;border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+  .project-card img{width:100%;height:160px;object-fit:cover;border-bottom:1px solid #1f2230}
+  .project-card h3{margin:14px 14px 6px}
+  .project-card p{margin:0 14px 16px;color:var(--muted)}
+  .project-card .btn{margin:0 14px 16px;align-self:flex-start}
+
+  .resume{background:linear-gradient(180deg,rgba(125,92,255,.07),transparent)}
+
+  .contact form{display:grid;gap:12px;max-width:520px}
+  input,textarea{padding:12px 14px;border-radius:12px;border:1px solid #2a2e41;background:#0f121a;color:var(--text)}
+  textarea{min-height:120px;resize:vertical}
+  .social-links{margin-top:18px;display:flex;gap:14px;flex-wrap:wrap}
+  .social-links a{color:var(--brand)}
+
+  footer{padding:30px 18px;color:var(--muted);text-align:center;border-top:1px solid #1f2230}
+
+  @media (max-width:640px){
+    .about-content{grid-template-columns:1fr}
+    .about-content img{width:100%;height:220px}
+  }
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <h1 class="logo">Anagha<span></span> Sreenidhi</span>.</span></h1>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="home">
+    <div class="home-content">
+      <h2>Hi, I'm <span>Anagha<span> Sreenidhi</span></h2>
+      <p>Aspiring Software Developer | UPSC Aspirant | Tech Enthusiast</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="about-content">
+      <img src="assets/profile.jpg" alt="Anagha" />
+      <div>
+        <h2>About Me</h2>
+        <p>
+          I'm Anagha Sreenidhi Dhavala, a passionate learner exploring
+          technology and problem-solving. I aim to build impactful projects
+          and continuously upskill myself.
+        </p>
+        <h3>Skills</h3>
+        <ul class="skills">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Git & GitHub</li>
+          <li>Java</li>
+          <li>C Programming</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="assets/project1.png" alt="Project 1" />
+        <h3>Project One</h3>
+        <p>Brief description of the project goes here.</p>
+        <a href="#" target="_blank" class="btn">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="assets/project2.png" alt="Project 2" />
+        <h3>Project Two</h3>
+        <p>Brief description of the project goes here.</p>
+        <a href="#" target="_blank" class="btn">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="resume">
+    <h2>Resume</h2>
+    <p>Download my latest resume below:</p>
+    <a href="assets/resume.pdf" download class="btn">Download Resume</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <div class="social-links">
+      <a href="https://linkedin.com/in/anaghasreenidhidhavala" target="_blank">LinkedIn</a>
+      <a href="https://github.com/anaghasreenidhi" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Anagha Sreenidhi Dhavala. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+  // Smooth scroll is handled by CSS (scroll-behavior). Add a tiny polish:
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href');
+      if(id.length>1){
+        e.preventDefault();
+        document.querySelector(id)?.scrollIntoView({behavior:'smooth'});
+      }
+    });
+  });
+</script>
+</body>
+</html>
